@@ -8,54 +8,6 @@ class Main extends CI_Controller {
                 $this->load->helper('url_helper');
         }
 
-/*
-        public function index()
-        {
-
-          $allPrjcts = $this->todolist_model->get_all_projects();
-          $allTasks = $this->todolist_model->get_all_tasks();
-          
-          if(count($allPrjcts) > 0){
-              
-           $compleateHtml = ''; 
-          foreach($allPrjcts as $item){
-             $data['name'] = $item['name'];
-    		 $data['newID'] = $item['id'];
-    		 $data['showAdd'] = "N";
-    		 $strTask = '';
-    		 for($i=0;$i<count($allTasks);$i++){
-                    if($allTasks[$i]['project_id'] == $item['id']){
-                        $data['taskName'] = $allTasks[$i]['name'];
-                        $data['taskId'] = $allTasks[$i]['id'];
-                        $data['deadline'] = $allTasks[$i]['deadline'];
-                        $data['status'] = $allTasks[$i]['status'];
-                        $strTask .= $this->load->view('Parts/taskContainer', $data, TRUE);
-                }
-    		 }
-    		 $data['Tasks'] = $strTask;
-    		 $compleateHtml .= $this->load->view('Parts/HeaderForProjects', $data, TRUE);
-          }
-          //When project selected
-            $data['Prjcts'] = $compleateHtml;
-            $this->load->view('Parts/header');
-            $this->load->view('Parts/body',$data);
-            $this->load->view('Parts/new_project');
-            $this->load->view('Parts/footer');
-            
-            //When no projects in DB
-          }else{
-            $this->load->view('Parts/header');
-            $this->load->view('Parts/body');
-            $this->load->view('Parts/new_project');
-            $this->load->view('Parts/footer');
-          }
-          
-          
-          
-          
-		}
-		
-	*/	
 		public function EditTask()
 		{
 		    $NewName = $this->input->post('NewName');
