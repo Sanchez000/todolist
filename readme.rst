@@ -1,70 +1,60 @@
-###################
-What is CodeIgniter
-###################
+SIMPLE TODO LIST FROM RUBY GARAGE
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+For test APP:
 
-*******************
-Release Information
-*******************
+1) Check test site in header
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+2)Login with
 
-**************************
-Changelog and New Features
-**************************
+    login: test
+    Password: test
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+#SQL Task:
 
-*******************
-Server Requirements
-*******************
+All queries were tested in the MySql database.
 
-PHP version 5.6 or newer is recommended.
+#Given tables:
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+    Tasks ( id,name,status,project_id,deadline)
+   Projects (id, name,owner)
 
-************
-Installation
-************
+#Queries:
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+    1) Get all statuses, not repeating, alphabetically ordered.
 
-*******
-License
-*******
+SELECT DISTINCT status FROM Tasks ORDER BY status
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+    2) Get the count of all tasks in each project, order by tasks count descending.
 
-*********
-Resources
-*********
+SELECT t1.name as project_name, count(t2.id) as count_tasks FROM Projects as t1 LEFT JOIN Tasks as t2 ON t2.project_id = t1.id GROUP BY project_name ORDER BY count_tasks DESC 
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+    3) Get the count of all tasks in each project, order by project names.
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
-***************
-Acknowledgement
-***************
+Select count(t1.id),t2.name From Tasks as t1 JOIN Projects as t2 ON t2.id = t1.project_id GROUP BY project_id ORDER BY t2.name
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+  4) Get the tasks for all projects having the name beginning with “N” letter.
+
+SELECT t1.name as task, t2.name as project FROM Tasks as t1, Projects as t2 WHERE t2.name LIKE "N%" AND t1.project_id = t2.id
+
+ 5)     Get the list of all projects containing the “a” letter in the middle of the name, and show the tasks count near each project. Mention that there can exist projects without tasks and tasks with project_id=NULL.
+
+SELECT t2.name as project, count(t1.id) as count_tasks FROM Projects as t2 LEFT JOIN Tasks  as t1 on t1.project_id = t2.id WHERE t2.name LIKE "%a%" AND t2.name NOT LIKE "a%" AND t2.name NOT LIKE "%a" GROUP BY project
+
+  6) Get the list of tasks with duplicate names. Order alphabetically.
+
+SELECT name FROM Tasks GROUP BY name HAVING count(*)>1 ORDER BY name
+
+    7) Get the list of tasks having several exact matches of both name and status, from the project Garage. Order by matches count.
+
+SELECT t1.name, t1.status, COUNT(*) as task_count FROM Tasks as t1, Projects as t2 WHERE t2.name="Garage" AND t1.project_id = t2.id GROUP BY t1.name, t1.status HAVING count(*)>1 ORDER BY task_count
+
+   8) Get the list of project names having more than 10 tasks in status completed. Order by project_id.
+
+SELECT t1.name FROM Projects as t1 Where t1.id IN (Select t2.project_id From Tasks as t2 Where t2.status = 0 HAVING count(*)>10) ORDER BY t1.id
+
+ 9) Get the number of completed tasks:
+
+SELECT t1.name, count(*) FROM Projects as  t1, Tasks as t2 WHERE t2.project_id=t1.id AND t2.status= 0 GROUP BY t1.name HAVING count(*)>10 ORDER BY t1.id
+
+
