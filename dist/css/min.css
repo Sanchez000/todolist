@@ -1,0 +1,367 @@
+.task:last-child {
+border-radius: 0px 0px 15px 15px;
+}
+.task {
+border-top: 1px solid #E7EBEA;
+min-height: 50px;
+}
+
+
+.menu {
+    position: fixed;
+    z-index: 101;
+    width: 100%;
+    height: 6px;
+    background: #333333;
+    box-sizing: border-box;
+    padding-right: 30px;
+    padding-top: 6px;
+    font-family: texgyreheros;
+    font-size: 14px;
+    text-align: right;
+    line-height: 120%;
+    color: rgb(51,51,51);
+}
+
+
+.borderedTask {
+border-right: 1px solid #E7EBEA;
+width:3px; 
+}
+
+a.save_add {
+
+font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding-top: 5px;
+            line-height: 120%;
+            font-weight: bold;
+            color: rgb(255,255,255);
+            text-align: center;
+            border: 1px solid #333;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 0px 5px 5px 0px;
+            width: 95px;
+            height: 30px;
+            background-image: linear-gradient(rgb(150,205,176) 0%,rgb(77,132,100) 97%);
+            border-color: rgb(68,117,87);
+            border-width: 1px;
+            border-style: solid;
+            text-shadow: 0px 1px 0px rgba(0,0,0,0.75);
+            float:left;
+
+}
+
+div.row.for.add_task {
+margin-bottom: 20px;margin-top: -20px;background: #BEBEBE;
+    text-align: center;
+    min-height: 50px;
+}
+
+div .row .out_edit  {
+    text-align: center;
+}
+
+div .out_edit .lvlBtns {
+    display: inline-block;
+    vertical-align: middle;
+    height: 14px;
+}
+
+div .out_edit .lvlBtns .border  {
+    height: 1px;
+    width: 10px;
+    background: #999999;
+    margin: 2px 0px;
+}
+
+
+div .lvlBtns .up {
+    
+    height: 4px;
+    margin-left: 1px;
+    background: url(http://shopperam.info/zub/todolist/dist/img/up.png) no-repeat;
+    cursor: pointer;
+}
+
+div .lvlBtns .down {
+    
+height: 4px;
+    margin-left: 1px;
+    background: url(http://shopperam.info/zub/todolist/dist/img/down.png) no-repeat;
+    cursor: pointer;
+}
+
+div .out_edit .border{
+
+height: 12px;
+    border-right: 1px solid #CCCCCC;
+    margin: 0px 6px;
+    cursor: default;
+    font-size: 11px;
+}
+
+div .out_edit .edit {
+
+    padding-right: 12px;
+    background: url(http://shopperam.info/zub/todolist/dist/img/edit_task.png) no-repeat;
+    font-size: 11px;
+}
+
+
+div .out_edit .deadline {
+        padding-right: 12px;
+    background: url(http://shopperam.info/zub/todolist/dist/img/deadline.png) no-repeat;
+    font-size: 11px;
+    
+    
+}
+
+
+div .out_edit .deleteTask {
+    padding-right: 12px;
+    background: url(http://shopperam.info/zub/todolist/dist/img/del_task.png) no-repeat;
+    font-size: 11px;
+}
+
+
+
+
+.task
+{
+margin-bottom: 20px;
+margin-top: -20px;
+background-color: rgb(255,255,255);
+line-height: 50px;
+}
+
+
+.checkboh {
+width:4%;
+vertical-align: middle;
+border-right: 1px solid #E7EBEA;
+}
+
+
+
+
+.Btns 
+{
+width:17%;
+vertical-align: middle;
+}
+
+.containerTask
+{
+vertical-align: middle;
+width:78%;
+border-right: 1px solid #E7EBEA;
+}
+
+.new_prjct
+{
+display:none;text-align:center;
+background-image: -webkit-gradient(linear,37% 0%,37% 100%,color-stop(0, rgb(81,131,190)),color-stop(0.99, rgb(55,93,158)));
+}
+
+.new_prjct .col
+{
+vertical-align: middle;
+width: 38px;
+height: 46px;
+text-align: right;
+padding-top: 2px;
+padding-right: 2px; 
+}
+
+#name_new_prjct {
+border-radius: 8px 8px 8px 8px;
+width: 90%;
+}
+
+
+#textarea1 {
+width: 500px;
+}
+
+
+.buttons {
+width: 120px;
+height: 48px;
+vertical-align: middle;
+}
+
+.cancel {
+background: url(../img/cancel_pr.png) no-repeat;
+padding-right: 16px;
+}
+
+
+.border {
+height: 16px;
+border-right: 1px solid #4B80BE;
+margin: 0px 10px;
+cursor: default;
+}
+
+#save_new_prjct {
+background: url(../img/save_pr.png) no-repeat;
+padding-right: 16px;
+}
+
+.btns_line {
+display:inline-block;
+text-align:center;
+width: 120px;
+}
+
+.dft {
+vertical-align: middle;
+}
+
+
+.container-header {
+text-align: center;
+padding-top: 60px;
+
+height: 108px;
+}
+
+
+.smpl {
+font-family: texgyreheros;
+font-weight: bold;
+font-size: 29px;
+line-height: 120%;
+color: rgb(51,51,51);
+text-shadow: 0px 1px 0px rgb(255,255,255);
+-ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX = 0,OffY = 1,Color = #ffffffff,Positive = true)";
+zoom: 1;
+}
+
+.rby {
+font-family: texgyreheros;
+font-size: 18px;
+line-height: 120%;
+color: rgb(51,51,51);
+text-align: center;
+text-shadow: 0px 1px 0px rgb(255,255,255);
+zoom: 1;
+}
+
+body {
+background-image: url(../img/bg.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+
+
+
+
+
+.container_for_prjcts {
+background-color: rgb(255,255,255);
+
+}
+
+
+
+
+
+.head_of_prjct {
+display: block;text-align: left;margin-bottom: 20px;background-image: -webkit-gradient(linear, 37% 0%, 37% 100%, from(rgb(81, 131, 190)), color-stop(0.99, rgb(55, 93, 158)));border-color: rgb(49,85,137);
+    border-width: 1px;
+    border-style: solid;
+    -moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.35);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.35);
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.35);
+
+}
+
+
+
+.hspan {
+vertical-align: middle;font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: bold;
+    color: rgb(255,255,255);
+    text-shadow: 0px 1px 0px rgb(40,64,93);
+
+}
+
+
+
+
+.bordered {
+height: 16px;
+    border-right: 1px solid #4B80BE;
+    margin: 0px 10px;
+    cursor: default;
+}
+
+.inputTask {
+width: 520px;max-width: 520px;float:left;
+}
+
+.hlogo {
+vertical-align: middle;
+ 
+   width: 38px;
+
+    height: 46px;
+ 
+   text-align: right;
+  
+  padding-top: 2px;
+ 
+   padding-right: 2px;
+}
+
+
+
+
+
+
+.hidd {
+display:inline-block;
+text-align:center;
+width: 120px;
+}
+
+
+
+
+.head_of_prjct .buttons {
+width: 120px;
+height: 48px;
+vertical-align: middle;
+}
+
+
+
+.plus {
+vertical-align: middle;width: 38px;height: 46px;text-align: right;padding-top: 2px;padding-right: 2px;
+
+}
+
+
+.dinpt {
+vertical-align: middle;width: 534px;max-width: 520px;padding-left: 5px;
+}
+
+
+
+.add_task  .buttons {
+width: 120px;max-width: 105px;height: 48px;vertical-align: middle;padding-left: 0px;
+}
+
+
+
+
+
+
+
+
